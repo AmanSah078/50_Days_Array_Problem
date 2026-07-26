@@ -1,28 +1,21 @@
-import java.util.Arrays;
 class Missing_Number {
-	static int findthemissingnum(int[] arr)
+	static int  tofindmissingnum(int[] arr)
 	{
 		int index=0;
-		//Take one loop first
-		for(int i=0; i<arr.length-1; i++)
+		for(int i=0;  i<arr.length; i++)
 		{
 			if(arr[i]+1!=arr[i+1])
 			{
-				index=i+1;
+				return arr[i]+1;
 			}
-//			else {
-//				return -1;
-//			}
 		}
-		return index;
+		return 0;
 	}
 	public static void main(String[] args)
 	{
-		//int[] arr={3,0,1};
-		int[] arr={9,6,4,2,3,5,7,0,1};
-		Arrays.sort(arr);
-		int result=findthemissingnum(arr);
+		//int[] arr= {2,3,5,6,7};
+		int[] arr= {1,2,3,5,6};
+		int result=tofindmissingnum(arr);
 		System.out.println(result);
 	}
-	
 }

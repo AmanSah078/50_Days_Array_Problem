@@ -1,27 +1,23 @@
 class Palindrome {
-	static void findthepalindrome(int n)
+	static String findpalindrome(int[] arr)
 	{
-		int org= n;
-		int rev=0;
-		while(n>0)
+		int i=0;
+		int j=arr.length-1;
+		while(i<j)
 		{
-			int digit=n%10;
-			rev=rev*10+digit;
-			n=n/10;
+			if(arr[i]==arr[j])
+			{
+				return "Yes Palindrome";
+			}
+			i++;
+			j--;
 		}
-		if(org==rev)
-		{
-			System.out.println("Yes Palindrome");
-		}
-		else {
-			System.out.println("Not a Palindrome");
-		}
+		return "Not Palindrome";
 	}
 	public static void main(String[] args)
 	{
-//		  int n=121;
-		int n=123;
-	     findthepalindrome(n);
-		
+		int[] arr= {1,2,4,1};
+		String result= findpalindrome(arr);
+		System.out.println(result);
 	}
 }

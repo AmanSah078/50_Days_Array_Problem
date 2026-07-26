@@ -1,40 +1,39 @@
 class Valid_Anagrams {
-	static boolean tofindvalidanagrams(String s, String t)
+	static boolean validanagrams(String str,String tsr)
 	{
-		//First i have to store inside the 26 char in array
-		int[] arr=new int[26];
-		//use the outer loop 
-		for(int i=0; i<s.length(); i++)
+		int[] arr= new int[26];
+		 //to destroy the String str
+		for(int i=0; i<str.length()-1; i++)
 		{
-		//convert in to char
-		    char ch=s.charAt(i);
-		//To find the freq	
-			arr[ch-'a']++;
-		
+		 //convert in to the char
+		   char ch= str.charAt(i);
+			//now to count the char 
+		   arr[ch-'a']++;
 		}
-			for(int j=0; j<t.length(); j++)
-			{
-		    char ch1=t.charAt(j);
-			arr[ch1-'a']--;	
-			}
-		
-	//Now finally we'll store our char inside the array 
+		//To destroy the String tsr
+		for(int i=0; i<tsr.length()-1; i++)
+		{
+			//convert in to the char
+			char ch= str.charAt(i);
+			arr[ch-'a']--;
+		}
+		//now it's time to verify 
 		for(int i=0; i<26; i++)
 		{
 			if(arr[i]!=0)
 			{
 				return false;
 			}
+		
 		}
 		return true;
 	}
 	public static void main(String[] args)
 	{
-//		String s="car";
-//		String t="cat";
-		String s="anagram";
-		String t="nagaram";
-		boolean result=tofindvalidanagrams(s,t);
+		String str="alexaw";
+		String tsr="xaelar";
+		boolean result=validanagrams(str,tsr);
 		System.out.println(result);
 	}
+	
 }

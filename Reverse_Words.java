@@ -1,25 +1,22 @@
 class Reverse_Words {
-static void findthereversewords(String[] str)
-{
-	//dude how u can directly modify are u comedy me because string is immutabe then there is not any possiblity to modify like this 
-	//It's possible when u will be store inside the var
-	//str.trim();
-	str=str.trim();
-//	str.toLowerCase();
-	str=str.toLowerCase();
-	
-	// Split the string into words using space
-String[] words = str.split("\\s+");
-   // Traverse the array from last word to first word
-        for (int i = words.length - 1; i >= 0; i--) {
+	static void reversewords(String str)
+	{
+		//To remove the extra space
+		str= str.trim();
+		//To convert in to the lower case
+		str= str.toLowerCase();
+		//i just split the string in to words
+		String[] words = str.split("\\s+");
 
-            // Print the current word
-            System.out.print(words[i]);
-
-}
+		for(int i=words.length-1; i>=0; i--)
+		{
+			System.out.print(words[i] + " ");
+		}
+	}
 	public static void main(String[] args)
 	{
-		String[]str= ["i","Love","You"];
-		findthereversewords(str);
+		String str="i am enough to destroy you";
+		reversewords(str);
+			
 	}
 }
